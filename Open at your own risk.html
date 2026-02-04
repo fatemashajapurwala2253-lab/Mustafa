@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Open at your own risk?!!??</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Brush Script MT;
+      background: linear-gradient(135deg, #753232, #d69f9f);
+      color: #290101;
+      text-align: center;
+    }
+
+    .container {
+      padding: 10px 2px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    
+
+    .gallery {
+      display: flex;
+      flex-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+	padding: 10px 2px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .heart {
+      font-size: 3rem;
+      animation: float 2s infinite ease-in-out;
+      margin: 30px 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    button {
+      background: #fff;
+      color: #520a0a;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      position: relative;
+    }
+
+    #noBtn {
+      position: absolute;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1><marquee>&nbsp&nbsp&nbspBe My Valentine 💖</marquee></h1>
+    <p><h2>
+      From the moment we met, my heart chose you.
+      Every memory with you is my favorite one. (scroll)
+    </h2></p>
+
+    <marquee><div class="gallery">
+      <img src="C:\Users\fatema\OneDrive\Pictures\Photo2.jpeg" alt="Us together">
+      <img src="C:\Users\fatema\OneDrive\Pictures\Photo1.jpeg" alt="Our memory">
+      <img src="C:\Users\fatema\OneDrive\Pictures\Photo3.jpeg" alt="Love">
+	<img src="C:\Users\fatema\OneDrive\Pictures\Photo4.jpeg">
+	<img src="C:\Users\fatema\OneDrive\Pictures\Photo5.jpeg">
+	<img src="C:\Users\fatema\OneDrive\Pictures\Photo6.jpeg">
+	<img src="C:\Users\fatema\OneDrive\Pictures\Photo7.jpeg">
+	<img src="C:\Users\fatema\OneDrive\Pictures\Photo8.jpeg">
+    </div></marquee>
+
+    <div class="heart">❤️</div>
+      <h1>Will You Be My Valentine?</h1><br>
+
+<button onclick="alert('I love you forever 💍💘')">Yes 😍</button>&nbsp&nbsp
+<button id="noBtn" onclick="moveNo()">No 😒</button>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    let noCount = 0;
+
+    const messages = [
+      "I'll beat you 👊",
+      "And bite you 😬",
+      "Stilllllll 🙄",
+      "Not that easily 😈",
+      "Just say yes already 💖"
+    ];
+
+    function moveNo() {
+      noCount++;
+
+      noBtn.innerText = messages[noCount % messages.length];
+
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = window.innerHeight - noBtn.offsetHeight;
+
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+
+      noBtn.style.left = `${randomX}px`;
+      noBtn.style.top = `${randomY}px`;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = "<h1>YAY 💕 I knew it!!! 😍</h1>";
+    }
+  </script>
+  </div>
+</body>
+</html>
+
+
+
+
